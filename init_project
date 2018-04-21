@@ -1,4 +1,4 @@
 #!/bin/bash
-cp "$1/index-START.html"  "$1/index.html"
+cat "$1/index-START.html" | iconv -c -f utf-8 -t ascii - > "$1/index.html"
 xdg-open "$1/index.html"
 $EDITOR "$1/index.html"
