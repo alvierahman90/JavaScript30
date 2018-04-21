@@ -1,3 +1,4 @@
 #!/bin/bash
 cp "$1/index-START.html"  "$1/index.html"
 xdg-open "$1/index.html"
+$EDITOR "$1/index.html"
