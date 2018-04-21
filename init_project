@@ -1,4 +1,0 @@
-#!/bin/bash
-sed -e 's/  /\t/g' "$1/index-START.html" | iconv -c -f utf-8 -t ascii - > "$1/index.html"
-xdg-open "$1/index.html"
-$EDITOR "$1/index.html"
