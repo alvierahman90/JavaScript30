@@ -1,12 +1,24 @@
 #!/bin/bash
-sed -e 's/  /\t/g' "$1/index-START.html" | iconv -c -f utf-8 -t ascii - > "$1/index.html"
-xdg-open "$1/index.html"
-$EDITOR "$1/index.html"
+
+index_base="$1/index-START.html"
+index="$1/index.html"
+scripts_base="$1/scripts-START.js"
+scripts="$1/scripts.js"
+style_base="$1/style-START.css"
+style="$1/style.css"
+
+# Create project files from *-START.*
+sed -e 's/  /\t/g' "$index_base" | iconv -c -f utf-8 -t ascii - > "$index"
+[ -f "$scripts_base" ] &&  sed -e 's/  /\t/g' "$scripts_base" | iconv -c -f utf-8 -t ascii - > "$scripts"
+[ -f "$style_base" ] && sed -e 's/  /\t/g' "$style_base" | iconv -c -f utf-8 -t ascii - > "$style"
+
+xdg-open "$index"
+$EDITOR "$index"
 while true; do
 	read -p  "Finished exercise (add, commit, and push?)? " yn
 	case $yn in
 		[Yy]* ) 
-			git add "$1/index.html"
+			git add .
 			git commit -m "Do exercise $(echo $1 | cut -f 1 -d " ")."
 			git push
 			break;;
