@@ -4,6 +4,8 @@ Starter Files, completed solutions, **and my solutions** for the JavaScript 30 D
 
 Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
 
+[GitHub pages](https://alvierahman90.github.io/JavaScript30/)
+
 Projects links:
 1. [JavaScript Drum Kit](https://alvierahman90.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit)
 1. [JS and CSS Clock](https://alvierahman90.github.io/JavaScript30/02%20-%20JS%20and%20CSS%20Clock)
