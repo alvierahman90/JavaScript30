@@ -8,9 +8,9 @@ style_base="$1/style-START.css"
 style="$1/style.css"
 
 # Create project files from *-START.*
-sed -e 's/  /\t/g' "$index_base" | iconv -c -f utf-8 -t ascii - > "$index"
-[ -f "$scripts_base" ] &&  sed -e 's/  /\t/g' "$scripts_base" | iconv -c -f utf-8 -t ascii - > "$scripts"
-[ -f "$style_base" ] && sed -e 's/  /\t/g' "$style_base" | iconv -c -f utf-8 -t ascii - > "$style"
+sed -e 's/  /\t/g' "$index_base" > "$index"
+[ -f "$scripts_base" ] &&  sed -e 's/  /\t/g' "$scripts_base" > "$scripts"
+[ -f "$style_base" ] && sed -e 's/  /\t/g' "$style_base" >"$style"
 
 xdg-open "$index"
 $EDITOR "$index"
